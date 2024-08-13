@@ -12,7 +12,7 @@ class EmployeeController extends Controller
         return Employee::all();
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
