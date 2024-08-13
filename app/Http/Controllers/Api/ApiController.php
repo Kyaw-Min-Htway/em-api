@@ -12,8 +12,8 @@ class ApiController extends Controller
     public function register(Request $request){
         $request->validate([
             "name" => "required",
-            "email" => "required|string|email|unique:users",
-            "password" => "required|confirmed"
+            "email" => "required|string|email",
+            "password" => "required"
         ]);
 
         User::create([
@@ -86,7 +86,7 @@ class ApiController extends Controller
 
         return response()->json([
             "status" => true,
-            "message" => "user loged out successfully."
+            "message" => "user logged out successfully."
         ]);
     }
 }
